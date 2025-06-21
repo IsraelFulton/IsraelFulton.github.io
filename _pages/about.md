@@ -14,4 +14,4 @@ This site collects essays, project notes, and the occasional book review.
 
 * **Location:** Washington, D.C.
 * **Current role:** Analyst, Analysis Group (starting Aug 2025)  
-* **Education:** A.B. in Economics, minor in Math, WashU '25
+* **Education:** A.B. in Economics, Mathmatics minor, WashU '25
