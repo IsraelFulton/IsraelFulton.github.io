@@ -1,9 +1,3 @@
----
-layout: single
-title:  "About"
-permalink: /about/
----
-
 I’m a recent economics graduate passionate about international affairs,
 artificial intelligence, climate & energy markets.  
 This site collects essays, project notes, and the occasional book review.
