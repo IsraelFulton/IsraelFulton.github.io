@@ -1,7 +1,6 @@
 ---
 layout: home                # “landing page” layout
-title:  "Israel Fulton"
-subtitle: "Economics • AI • Climate & energy"
+title:  "Homepage"
 author_profile: true        # pulls your avatar/bio if you add one
 ---
 
