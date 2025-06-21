@@ -27,6 +27,11 @@ url: "https://israelfulton.github.io" # the base hostname & protocol for your si
 twitter_username: IsraelJFulton
 github_username:  IsraelFulton
 author: IsraelFulton
+
+collections:
+  pages:
+    output: true          # ← actually write the files to _site/
+    permalink: /:title/   # /about/  /projects/  /contact/
 # Build settings
 theme: minima
 minimal_mistakes_skin: "dark"
