@@ -1,8 +1,3 @@
----
-layout: home            # tells Minimal Mistakes to use the landing-page layout
-title: "Israel Fulton"
-subtitle: "Exploring economics, AI, climate & more"
-author_profile: true    # shows your avatar + bio (if you add one later)
----
+yaml<br>---<br>layout: home<br>title: "Israel Fulton"<br>subtitle: "Exploring economics, AI, climate & more"<br>author_profile: true # shows the avatar + bio<br>---<br>
 
-Welcome! I’ll be using this space to share essays, notes, and project updates.
+yaml<br>---<br>layout: single<br>title: "About"<br>---<br># <h2> blocks and Markdown here…<br>
