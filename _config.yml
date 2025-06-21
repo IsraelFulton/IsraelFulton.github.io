@@ -26,6 +26,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://israelfulton.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: IsraelJFulton
 github_username:  IsraelFulton
+linkedin_username: IsraelFulton
 author: IsraelFulton
 
 collections:
@@ -34,7 +35,7 @@ collections:
     permalink: /:title/   # /about/  /projects/  /contact/
 # Build settings
 theme: minima
-minimal_mistakes_skin: "dark"
+minimal_mistakes_skin: "air"
 plugins:
   - jekyll-feed
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
