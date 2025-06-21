@@ -7,5 +7,6 @@ author_profile: true    # shows your avatar & bio box
 
 I can be reached at the following:
 
-Email - israelfulton@wustl.edu
-X - @IsraelJFulton
+Email - [israelfulton@wustl.edu](emailto:israelfulton@wustl.edu)
+
+X - [IsraelJFulton](www.x.com/IsraelJFulton)
