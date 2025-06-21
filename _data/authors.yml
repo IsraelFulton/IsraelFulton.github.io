@@ -1,0 +1,11 @@
+IsraelFulton:
+  name: "Israel Fulton"
+  avatar: "/assets/images/avatar.jpg"
+  bio: "Economics, international affairs, climate & energy."
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url:  "https://github.com/IsraelFulton"
+    - label: "Twitter"
+      icon: "fab fa-twitter"
+      url:  "https://twitter.com/IsraelJFulton"
