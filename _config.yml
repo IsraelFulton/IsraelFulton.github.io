@@ -21,7 +21,7 @@
 title: Israel Fulton
 email: israelfulton@wustl.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  economics, international affairs, climate and energy
+  economics, international affairs, artificial intelligence, climate and energy
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://israelfulton.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: IsraelJFulton
