@@ -5,6 +5,7 @@ permalink: /about/      # <-- URL visitors will use
 author_profile: true    # shows your avatar & bio box
 ---
 
+
 I’m a recent economics graduate passionate about international affairs,
 artificial intelligence, climate & energy markets.  
 This site collects essays, project notes, and the occasional book review.
