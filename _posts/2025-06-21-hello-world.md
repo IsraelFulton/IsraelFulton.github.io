@@ -8,5 +8,4 @@ tags:     [welcome]
 
 Site kickoff! After reading documentation and an arduous vibe-code session, I got this website up and running. This post is to commemorate the beginning of my curated internet presence. Big things are coming...
 
-## Saturday June 21, 2025
-### sometime in the early morning
+_written ometime in the early morning Saturday June 21, 2025 sometime in the early morning_
