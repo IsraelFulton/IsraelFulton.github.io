@@ -1,14 +1,17 @@
 IsraelFulton:
   name: "Israel Fulton"
-codex/add-profile-picture-feature-ovk8y8
   avatar: "/assets/images/avatar.jpeg"
-
-main
   bio: "Economics, international affairs, climate & energy."
   links:
     - label: "GitHub"
       icon: "fab fa-github"
-      url:  "https://github.com/IsraelFulton"
+      url: "https://github.com/IsraelFulton"
     - label: "Twitter"
       icon: "fab fa-twitter"
-      url:  "https://twitter.com/IsraelJFulton"
+      url: "https://twitter.com/IsraelJFulton"
+    - label: "Substack"
+      icon: "fas fa-pencil-alt"
+      url: "https://limitingfactors.substack.com"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://linkedin.com/in/israel-fulton"
