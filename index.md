@@ -1,9 +1,11 @@
 ---
-layout: home                # “landing page” layout
-title:  ""
-author_profile: true        # pulls your avatar/bio if you add one
+layout: home
+title: ""
+author_profile: true
 ---
 
-Welcome! I’ll be using this space to share essays drafts, notes on what I'm reading, and project updates. Check out my long-form writing at [Limiting Factors](https://limitingfactors.substack.com) on Substack.
+I'm an economist and analyst based in Washington, D.C., working at [Analysis Group](https://www.analysisgroup.com/). I write about economics, international affairs, artificial intelligence, and climate & energy.
 
-This site is still being made, so keep checking back on progress!
+This site is where I share essay drafts, project write-ups, reading notes, and other work in progress. For long-form pieces, check out [Limiting Factors](https://limitingfactors.substack.com) on Substack.
+
+## Recent Posts
