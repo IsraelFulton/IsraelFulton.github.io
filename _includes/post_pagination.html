@@ -1,0 +1,12 @@
+{% if page.collection == 'posts' %}
+{% if page.previous or page.next %}
+<nav class="pagination" aria-label="Post navigation">
+  {% if page.previous %}
+  <a href="{{ page.previous.url | relative_url }}" class="pagination--pager" rel="prev">&larr; {{ page.previous.title | escape }}</a>
+  {% endif %}
+  {% if page.next %}
+  <a href="{{ page.next.url | relative_url }}" class="pagination--pager" rel="next">{{ page.next.title | escape }} &rarr;</a>
+  {% endif %}
+</nav>
+{% endif %}
+{% endif %}

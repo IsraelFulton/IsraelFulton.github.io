@@ -1,0 +1,7 @@
+{% assign project = include.project %}
+<article class="project-card" aria-labelledby="project-{{ project.slug | slugify }}">
+  <p class="entry-meta">{{ project.category | escape }} · <span class="project-status">{{ project.status | escape }}</span></p>
+  <h3 id="project-{{ project.slug | slugify }}"><a href="{{ project.url | relative_url }}">{{ project.title | escape }}</a></h3>
+  <p>{{ project.summary | escape }}</p>
+  <p class="project-card__link"><a href="{{ project.url | relative_url }}">Read the case study<span class="visually-hidden">: {{ project.title | escape }}</span> <span aria-hidden="true">&rarr;</span></a></p>
+</article>
