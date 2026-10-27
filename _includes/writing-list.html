@@ -1,0 +1,9 @@
+<ul class="writing-list">
+{% for piece in site.data.writing limit:include.limit %}
+  <li>
+    <p class="entry-meta">{{ piece.kind | escape }} · {{ piece.publication | escape }} · <time datetime="{{ piece.date | date: '%Y-%m-%d' }}">{{ piece.date | date: '%B %-d, %Y' }}</time></p>
+    <h3><a href="{{ piece.url | escape }}">{{ piece.title | escape }}</a></h3>
+    <p>{{ piece.summary | escape }}</p>
+  </li>
+{% endfor %}
+</ul>

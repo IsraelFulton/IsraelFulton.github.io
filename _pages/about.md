@@ -1,25 +1,13 @@
 ---
-layout: single
 title: "About"
 permalink: /about/
-author_profile: true
+excerpt: "My background in economics, my work at Analysis Group, and the questions that connect my research and writing."
 ---
 
-I'm Israel Fulton, an analyst at [Analysis Group, Inc.](https://www.analysisgroup.com/) in Washington, D.C. I graduated from Washington University in St. Louis in 2025 with an A.B. in Economics and a minor in Mathematics.
+I'm an analyst at [Analysis Group](https://www.analysisgroup.com/) in Washington, D.C., where I work in economic consulting. I graduated from Washington University in St. Louis in 2025 with an A.B. in Economics and a minor in Mathematics.
 
-My interests sit at the intersection of economics and policy. I spend most of my time thinking about international affairs, the economics of artificial intelligence, and climate & energy markets. I'm drawn to questions where rigorous quantitative analysis can inform real-world decisions.
+I'm drawn to questions where quantitative analysis meets institutional choices: how markets transmit information, how technology changes work, and how policy shapes incentives. My interests include international affairs, the economics of artificial intelligence, and climate & energy markets.
 
-Outside of work, I write at [Limiting Factors](https://limitingfactors.substack.com), where I publish longer essays on topics I'm researching. This personal site is a complement to that — a place for shorter notes, project documentation, and work that doesn't fit neatly into a newsletter.
+My independent projects explore concert resale markets and the relationship between campaign finance, information, and the First Amendment. I also write [Limiting Factors](https://limitingfactors.substack.com), a newsletter on economics, technology, and policy.
 
-## Background
-
-- **Current role:** Analyst, Analysis Group, Inc.
-- **Education:** A.B. in Economics, Minor in Mathematics — Washington University in St. Louis, 2025
-- **Location:** Washington, D.C.
-- **Interests:** International economics, AI policy, energy markets, economic consulting
-
-## What I'm Working On
-
-- Building analytical tools for economic research
-- Writing about AI's impact on labor markets and productivity
-- Exploring data on global energy transitions
+You can explore my [projects]({{ '/projects/' | relative_url }}) and [writing]({{ '/writing/' | relative_url }}), or [get in touch]({{ '/contact/' | relative_url }}) to compare notes.

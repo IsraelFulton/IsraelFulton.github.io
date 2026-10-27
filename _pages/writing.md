@@ -1,21 +1,34 @@
 ---
-layout: single
 title: "Writing"
 permalink: /writing/
-author_profile: true
+excerpt: "Selected essays from Limiting Factors, alongside research and notes on economics, institutions, and technology."
 ---
 
-I write about economics, international affairs, artificial intelligence, and climate & energy policy. Longer essays are published on my Substack, [Limiting Factors](https://limitingfactors.substack.com).
+I write about economics, international affairs, artificial intelligence, and climate & energy. A recurring question is how institutions shape the information people use to make decisions.
 
-Shorter notes and posts appear on this site — see the [home page](/) for recent entries.
+## Selected essays
 
-## Newsletter: Limiting Factors
+Longer essays appear in [Limiting Factors](https://limitingfactors.substack.com), my newsletter on Substack.
 
-[Limiting Factors](https://limitingfactors.substack.com) is where I publish in-depth essays on topics I'm actively researching. Subscribe there for the long-form work.
+{% include writing-list.html %}
 
-## Topics I Write About
+[Browse the newsletter archive](https://limitingfactors.substack.com/archive)
 
-- **Economics & Policy** — Trade, labor markets, industrial policy
-- **Artificial Intelligence** — Economic impacts, AI policy, productivity effects
-- **Climate & Energy** — Energy transitions, carbon markets, resource economics
-- **International Affairs** — Geopolitics, development economics, global institutions
+## Research
+
+- [Concert resale price dynamics]({{ '/projects/seatdata/' | relative_url }}) — preliminary research on prices, inventory, and the limits of prediction.
+- [Truthful Representation]({{ '/projects/first-amendment/' | relative_url }}) — a research paper draft on First Amendment principles, campaign finance, and capital markets.
+
+{% assign notes = site.posts | where_exp: "post", "post.kind != 'site-note'" %}
+{% if notes.size > 0 %}
+## Notes
+
+{% for post in notes %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%B %-d, %Y" }}
+{% endfor %}
+{% endif %}
+
+<details class="archive-note">
+  <summary>From the site archive</summary>
+  <p><a href="{{ '/meta/hello-world/' | relative_url }}">Hello, World!</a> — June 21, 2025. The original site introduction.</p>
+</details>

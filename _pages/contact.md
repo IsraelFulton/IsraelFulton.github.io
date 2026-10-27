@@ -1,16 +1,16 @@
 ---
-layout: single
 title: "Contact"
 permalink: /contact/
-author_profile: true
+excerpt: "Reach Israel Fulton by email, or connect on X, LinkedIn, GitHub, and Substack."
 ---
 
-The best way to reach me is by email. I'm also active on X/Twitter and open to connecting on LinkedIn.
+The best way to reach me is by email: [{{ site.email }}](mailto:{{ site.email }}).
 
-- **Email:** [israeljfulton@gmail.com](mailto:israeljfulton@gmail.com)
-- **X/Twitter:** [@IsraelJFulton](https://x.com/IsraelJFulton)
-- **GitHub:** [IsraelFulton](https://github.com/IsraelFulton)
-- **LinkedIn:** [israel-fulton](https://linkedin.com/in/israel-fulton)
-- **Substack:** [Limiting Factors](https://limitingfactors.substack.com)
+I'm glad to compare notes on economics, policy, analytical tools, or a potential collaboration. You can also find me here:
 
-I'm open to conversations about economics, policy, data analysis, and potential collaborations. Don't hesitate to reach out.
+{% assign profile = site.data.authors[site.author] %}
+{% for link in profile.links %}
+{% unless link.url contains 'mailto:' %}
+- [{{ link.label }}]({{ link.url }})
+{% endunless %}
+{% endfor %}

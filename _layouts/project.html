@@ -1,0 +1,12 @@
+---
+layout: single
+---
+<p class="entry-meta">{{ page.category | escape }} · {{ page.status | escape }}</p>
+<p class="intro">{{ page.summary | escape }}</p>
+{% if page.review_note %}
+<aside class="draft-note" aria-label="Draft status">
+  <p><strong>Draft for review.</strong> {{ page.review_note | escape }}</p>
+</aside>
+{% endif %}
+{{ content }}
+<p class="case-study-back"><a href="{{ '/projects/' | relative_url }}">&larr; All projects</a></p>

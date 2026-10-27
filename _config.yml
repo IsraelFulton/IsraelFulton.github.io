@@ -1,41 +1,53 @@
-# Site settings
+# Site identity and canonical GitHub Pages domain.
 title: Israel Fulton
-subtitle: "Economics | International Affairs | AI | Climate & Energy"
-email: israelfulton@wustl.edu
+name: Israel Fulton
+subtitle: "Economics, institutions & technology"
+email: israeljfulton@gmail.com
 description: >-
-  Personal site of Israel Fulton — writing on economics, international affairs,
-  artificial intelligence, and climate & energy.
+  Israel Fulton is an analyst at Analysis Group in Washington, D.C.
+  Explore his analytical projects, research, and writing on economics,
+  institutions, and technology.
+locale: en-US
+lang: en
+timezone: America/New_York
 baseurl: ""
 url: "https://israelfulton.com"
-logo: # optional site logo
-twitter_username: IsraelJFulton
-github_username: IsraelFulton
+repository: IsraelFulton/IsraelFulton.github.io
 
-# Theme
+# Preserve the existing theme version and skin.
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "dark"
-
-# Author (default for all pages)
 author: IsraelFulton
+og_image: /assets/images/avatar.jpeg
+twitter:
+  username: IsraelJFulton
+social:
+  type: Person
+  name: Israel Fulton
+  links:
+    - https://x.com/IsraelJFulton
+    - https://www.linkedin.com/in/israel-fulton/
+    - https://github.com/IsraelFulton
+    - https://limitingfactors.substack.com
 
-# Reading
 words_per_minute: 200
-
-# Build settings
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
+  - jekyll-sitemap
 
-# Collections
+# Treat the existing standalone pages as pages, without synthetic post dates.
+include:
+  - _pages
+
 collections:
-  pages:
+  projects:
     output: true
-    permalink: /:title/
+    permalink: /projects/:name/
 
-# Defaults — apply front-matter to all pages/posts automatically
 defaults:
-  # All posts
   - scope:
       path: ""
       type: posts
@@ -43,30 +55,28 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
+      show_date: true
       share: true
-      related: true
-  # All pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-  # Top-level pages
+      related: false
   - scope:
       path: ""
       type: pages
     values:
       layout: single
       author_profile: true
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      author_profile: true
+      share: false
 
-# Outputting
+# Keep existing post URLs, including /meta/hello-world/.
 permalink: /:categories/:title/
-paginate: 5
-paginate_path: /page:num/
 
-# Exclude from processing
 exclude:
+  - .bundle/
   - .sass-cache/
   - .jekyll-cache/
   - Gemfile
@@ -74,3 +84,6 @@ exclude:
   - node_modules/
   - vendor/
   - README.md
+  - assets/images/README.md
+  - docs/
+  - script/
