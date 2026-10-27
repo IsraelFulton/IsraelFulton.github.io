@@ -4,7 +4,7 @@ permalink: /writing/
 excerpt: "Selected essays from Limiting Factors, alongside research and notes on economics, institutions, and technology."
 ---
 
-I write about economics, international affairs, artificial intelligence, and climate & energy. A recurring question is how institutions shape the information people use to make decisions.
+I write about economics, international affairs, artificial intelligence, climate, and energy. A recurring question is how institutions shape the information people use to make decisions.
 
 ## Selected essays
 
@@ -16,8 +16,8 @@ Longer essays appear in [Limiting Factors](https://limitingfactors.substack.com)
 
 ## Research
 
-- [Concert resale price dynamics]({{ '/projects/seatdata/' | relative_url }}) — preliminary research on prices, inventory, and the limits of prediction.
-- [Truthful Representation]({{ '/projects/first-amendment/' | relative_url }}) — a research paper draft on First Amendment principles, campaign finance, and capital markets.
+- [Do Concert Tickets Get Cheaper Before Showtime?]({{ '/projects/seatdata/' | relative_url }}) — repeated price observations, variation between shows, and a prediction that weakened in another sample.
+- [Truthful Representation]({{ '/projects/first-amendment/' | relative_url }}) — an argument about political information, corporate spending, and the rules of representation.
 
 {% assign notes = site.posts | where_exp: "post", "post.kind != 'site-note'" %}
 {% if notes.size > 0 %}

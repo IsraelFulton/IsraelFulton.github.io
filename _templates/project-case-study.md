@@ -5,13 +5,12 @@ layout: project
 title: "[Draft: project title]"
 slug: "replace-with-slug"
 category: "[Research area]"
-status: "Draft placeholder"
+subtitle: "[Optional descriptive subtitle]"
 # Set date to the actual case-study publication date when ready.
 featured: false
 order: 3
 excerpt: "[One accurate sentence for search and sharing.]"
-summary: "[The research question or problem; do not invent an outcome.]"
-review_note: "This case study is a draft placeholder. Substantive details need review."
+summary: "[Two or three concrete sentences about what you did and learned.]"
 ---
 
 ## The question

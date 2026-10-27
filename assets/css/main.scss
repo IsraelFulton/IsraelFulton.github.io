@@ -73,16 +73,28 @@ $quiet-border: rgba(255, 255, 255, 0.16);
   line-height: 1.7;
 }
 
+.page__content .project-subtitle {
+  margin: -0.35em 0 1.7em;
+  padding-left: 0.75em;
+  border-left: 1px solid $quiet-border;
+  color: $muted-text;
+  font-size: 0.95em;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@media (min-width: 48em) {
+  .homepage .page__title {
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
 .author__avatar img {
   aspect-ratio: 1;
   object-fit: cover;
   object-position: center 30%;
   border: 2px solid $quiet-border;
-}
-
-.author__bio {
-  color: $muted-text;
-  font-size: 0.95em;
 }
 
 .greedy-nav a {
@@ -91,12 +103,6 @@ $quiet-border: rgba(255, 255, 255, 0.16);
 
 .greedy-nav .site-title {
   letter-spacing: -0.015em;
-}
-
-.greedy-nav .site-subtitle {
-  color: $muted-text;
-  font-weight: 400;
-  line-height: 1.4;
 }
 
 /* Two quiet cards become one column before the text feels cramped. */
@@ -165,18 +171,6 @@ $quiet-border: rgba(255, 255, 255, 0.16);
   }
 }
 
-.draft-note {
-  margin: 1.5em 0;
-  padding: 0.9em 1.1em;
-  border-left: 2px solid $muted-text;
-  background: rgba(255, 255, 255, 0.035);
-  font-size: 0.88em;
-
-  p:last-child {
-    margin-bottom: 0;
-  }
-}
-
 .archive-note {
   margin-top: 2em;
   color: $muted-text;
@@ -218,6 +212,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 
 @media (max-width: 48em) {
+  .author__content {
+    padding: 0 0.65em;
+    vertical-align: middle;
+  }
+
   .project-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -228,13 +227,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
   .page__content .intro {
     font-size: 1.05em;
-  }
-}
-
-@media (max-width: 30em) {
-  .greedy-nav .site-subtitle {
-    max-width: 24ch;
-    white-space: normal;
   }
 }
 

@@ -8,7 +8,7 @@ classes: homepage
 
 <p class="intro">I'm Israel Fulton, an analyst at <a href="https://www.analysisgroup.com/">Analysis Group</a> in Washington, D.C. I'm interested in how markets and institutions shape decisions, and what careful analysis can tell us about them.</p>
 
-My work and writing span economics, international affairs, artificial intelligence, and climate & energy. Here you'll find analytical projects, research, and essays that connect those interests.
+I work and write about economics, international affairs, artificial intelligence, climate, and energy. This site brings together my analytical projects, research, and essays.
 
 [More about me]({{ '/about/' | relative_url }}) · [Get in touch]({{ '/contact/' | relative_url }})
 

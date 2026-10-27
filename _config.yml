@@ -1,7 +1,6 @@
 # Site identity and canonical GitHub Pages domain.
 title: Israel Fulton
 name: Israel Fulton
-subtitle: "Economics, institutions & technology"
 email: israeljfulton@gmail.com
 description: >-
   Israel Fulton is an analyst at Analysis Group in Washington, D.C.
@@ -70,6 +69,7 @@ defaults:
     values:
       layout: project
       author_profile: true
+      show_date: false
       share: false
 
 # Keep existing post URLs, including /meta/hello-world/.

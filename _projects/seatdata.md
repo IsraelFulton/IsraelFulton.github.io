@@ -1,38 +1,33 @@
 ---
-title: "Concert resale price dynamics"
+title: "Do Concert Tickets Get Cheaper Before Showtime?"
+subtitle: "Concert resale price dynamics"
 slug: seatdata
 category: "Empirical research"
-status: "Preliminary research"
 date: 2026-10-27
 featured: true
 order: 1
-excerpt: "A study of concert resale prices and inventory using SeatData, with an emphasis on measurement and out-of-sample evaluation."
-summary: "When does waiting to buy a resale concert ticket help, and when does it increase the risk of paying more?"
-review_note: "This overview describes the September 2026 research snapshot. The full case study and any shareable figures remain draft placeholders."
+excerpt: "I analyzed concert resale prices and inventory across 632 U.S. concerts, finding wide variation between shows and an increase-risk model that weakened on a separate sample."
+summary: "I analyzed repeated observations of resale prices and inventory across 632 U.S. concerts. Small median price changes hid large differences between shows, and a model for later price increases weakened on a separate historical sample."
 ---
 
-## The question
+A seller with an unsold concert ticket faces a deadline. That makes waiting for a last-minute discount sound sensible. But buyers are arriving too, and the cheapest available tickets may disappear before sellers cut their prices.
 
-A concert ticket expires at a fixed time. That creates a reason for sellers to cut prices, but it also gives buyers a reason to act before inexpensive offers disappear. This project asks how resale prices and inventory change as showtime approaches, and whether the state of an individual market helps distinguish those possibilities.
+I investigated this tension using [SeatData](https://seatdata.io/). My August sample contains 208,175 historical price and inventory snapshots across 632 U.S. concerts. I aligned the observations by time until showtime, compared each concert with its own baseline roughly two weeks earlier, and gave each event equal weight.
 
-## My approach
+## Small median changes, large differences between shows
 
-I built an analysis of U.S. concert resale markets using [SeatData](https://seatdata.io/). The work compares each event with its own earlier observations, examines the distribution of price changes across events, and evaluates predictive signals on a separate historical sample.
+In the day-before window, 18–36 hours before showtime, the median change in the cheapest listed ticket was a decline of just 2.1% across 599 matched concerts. The range between the 10th and 90th percentiles stretched from a 40.0% drop to a 42.9% increase. A small change in the middle concealed very different experiences at individual shows.
 
-Measurement is central to the analysis. A recorded minimum listing price is not a completed transaction, and a disappearing listing does not necessarily indicate a sale. The research distinguishes broad time windows from observations available at a specific decision point.
+Inventory fell much faster than typical prices. Active listings declined by a median 48.0% across 608 matched concerts over the same broad baseline-to-day-before comparison. Yet grouping events by how much inventory remained did little to distinguish subsequent discounts. Having plenty of tickets left was not, by itself, a useful reason to wait.
 
-## What the preliminary work suggests
+## A prediction that weakened in another sample
 
-A nearly flat median price path can conceal substantial movement in both directions. The preliminary analysis did not validate a universal rule to wait, and a predictive signal that looked promising in one sample weakened in the separate holdout.
+I then tested whether prices, inventory, and recent market changes could help predict a subsequent increase of more than 10% in the cheapest listed ticket. I used regularized logistic regression and kept related artists and tours together during validation, so closely connected concerts could not appear on both sides of a split.
 
-The useful result is a clearer account of uncertainty: price dispersion, changing inventory, and observation timing all matter when evaluating a proposed buying rule.
+The increase-risk model reached an AUC of 0.664 in grouped August validation across 574 usable concerts. AUC measures how well the model ranks concerts with later price increases ahead of those without; 0.5 is chance ranking. I froze the model and evaluation rules before acquiring July outcomes, then tested it on 360 July concerts without an artist or tour connection to the August sample.
 
-## Scope and limitations
+AUC fell to 0.576, below the precommitted 0.60 replication threshold. July was acquired later but occurred earlier in calendar time, so this was a separate historical test rather than a forward forecast.
 
-This is exploratory research, not a validated ticket-buying strategy. Recorded listing quotes exclude fees and can reflect different seats or quantities over time. The data do not establish the savings a buyer could have realized in a completed purchase.
+The August result did not transfer reliably to these concerts. Inventory levels and quote freshness differed between the samples, but I couldn't isolate what caused the model's performance to deteriorate.
 
-The source repository and licensed provider records are private. This overview does not redistribute the dataset or imply that raw records are available on request.
-
-<aside class="draft-note" aria-label="Case study placeholder">
-  <p><strong>Draft placeholder — evidence and figures.</strong> Add a reviewed methods note and any figures cleared for public sharing, with sample definitions, denominators, and limitations. No downloadable dataset or results package is published here.</p>
-</aside>
+These observations are listing quotes, not completed purchases. They exclude fees, can refer to different seats or quantities, and arrive unevenly; the broad time windows do not establish prices available at an exact buying deadline. The research did not produce a reliable universal rule for when to buy.

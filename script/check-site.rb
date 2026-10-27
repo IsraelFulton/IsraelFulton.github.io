@@ -74,7 +74,21 @@ end
   errors << "#{path}: standalone page has a synthetic article date" if doc&.at_css("meta[property='article:published_time']")
   errors << "#{path}: unexpected post pagination" if doc&.at_css("nav.pagination")
 end
+# Editorial requirements apply through shared templates on every page.
+pages.each do |file, doc|
+  label = file.relative_path_from(root)
+  errors << "#{label}: repeated navigation tagline" if doc.at_css(".site-subtitle")
+  errors << "#{label}: repeated sidebar tagline" if doc.at_css(".author__bio")
+end
+%w[projects/seatdata/index.html projects/first-amendment/index.html].each do |path|
+  doc = pages[root + path]
+  errors << "#{path}: visible project timestamp" if doc&.at_css(".page__date")
+  errors << "#{path}: public drafting scaffolding" if doc&.text&.match?(/Draft for review|Draft placeholder|what .*should.*be added/i)
+end
+post = pages[root + "meta/hello-world/index.html"]
+errors << "Original post lost its visible publication date" unless post&.css("time")&.any? { |time| time["datetime"].to_s.start_with?("2025-06-21") }
 homepage = pages[root + "index.html"]
+errors << "Homepage headline changed" unless homepage&.at_css("h1")&.text&.strip == "Economics, institutions, and technology."
 errors << "Introductory post is featured as recent work" if homepage&.text&.match?(/Hello, World!|Recent Posts/)
 errors << "Stale coming-soon copy" if pages.values.any? { |doc| doc.text.match?(/coming soon/i) }
 %w[README.md Gemfile Gemfile.lock script/check-site.rb _templates/project-case-study.md docs/].each do |path|

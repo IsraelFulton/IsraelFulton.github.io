@@ -34,9 +34,9 @@ Build and preview the proposed branch before merging. The existing GitHub Pages 
 
 Copy `_templates/project-case-study.md` into `_projects/<slug>.md`. Replace every bracketed placeholder with verified content and set `published: true` only when ready. Set `featured: true` for homepage inclusion and use `order` to control display. The project URL is `/projects/<filename>/`.
 
-Set `date` to the actual case-study publication date so it stays stable between builds. Write the question, your role, method, evidence, and limitations. State draft or preliminary status in `status` and use `review_note` when substantive material is missing. Do not imply completed outcomes, publication, or peer review. Client identities, confidential work, private repository URLs, licensed raw records, and unapproved manuscripts do not belong in the site source or output.
+Set `date` to the actual case-study publication date so it stays stable between builds. Write in first person about what you studied, did, and learned; choose headings that fit the work. Use two or three concrete sentences in `summary` for the shared cards. An optional `subtitle` provides a descriptive title beneath the main heading. Project dates remain in metadata, while `show_date: false` suppresses the visible date. Do not imply completed outcomes, publication, or peer review. Client identities, confidential work, private repository URLs, licensed raw records, and unapproved manuscripts do not belong in the site source or output.
 
-The SeatData and First Amendment overviews use verified source material; missing figures, downloadable papers, and full methods discussions are explicitly labeled draft placeholders. No private datasets or manuscripts are copied into the repository.
+The SeatData and First Amendment pages describe verified research. Keep authoring placeholders in this unpublished template only; omit unavailable resources and empty sections from public pages. No private datasets or manuscripts are copied into the repository.
 
 ### Add writing or notes
 
