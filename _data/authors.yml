@@ -1,7 +1,6 @@
 IsraelFulton:
   name: "Israel Fulton"
   avatar: "/assets/images/avatar.jpeg"
-  bio: "Economics, institutions, and technology."
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"

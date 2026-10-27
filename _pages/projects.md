@@ -1,10 +1,10 @@
 ---
 title: "Projects"
 permalink: /projects/
-excerpt: "Selected analytical projects and research, with the questions, methods, and limitations behind each."
+excerpt: "My work on concert resale markets, political information, and the institutions that shape decisions."
 ---
 
-Research and analytical projects, from concert resale markets to campaign finance. Each case study explains the question, the approach, and what the evidence can support.
+An expiring concert ticket and a corporate political ad both raise questions about information and incentives. In these projects, I follow those questions through resale-market data, an election model, and the rules that shape what people know when they make decisions.
 
 <div class="project-grid">
 {% assign projects = site.projects | sort: "order" %}
@@ -13,6 +13,4 @@ Research and analytical projects, from concert resale markets to campaign financ
 {% endfor %}
 </div>
 
-These are independent projects. My professional work is described at a general level on the [About page]({{ '/about/' | relative_url }}); client work and confidential materials are not included here.
-
-For related essays, visit [Writing]({{ '/writing/' | relative_url }}). To discuss a question or method, [get in touch]({{ '/contact/' | relative_url }}).
+For related essays, visit [Writing]({{ '/writing/' | relative_url }}). If you've worked on a similar question, I'd be glad to [compare notes]({{ '/contact/' | relative_url }}).
