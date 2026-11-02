@@ -1,7 +1,7 @@
 ---
 title: "About"
 permalink: /about/
-excerpt: "My background in economics, my work at Analysis Group, and the questions that connect my research and writing."
+excerpt: "Israel Fulton is an analyst at Analysis Group and a WashU economics graduate with interests in economics, artificial intelligence, and institutions."
 ---
 
 I'm an analyst at [Analysis Group](https://www.analysisgroup.com/) in Washington, D.C., where I work in economic consulting. I graduated from Washington University in St. Louis in 2025 with an A.B. in Economics and a minor in Mathematics.
