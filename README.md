@@ -28,6 +28,8 @@ Build and preview the proposed branch before merging. The existing GitHub Pages 
 - `_data/writing.yml`: curated external essays/publications with real publication dates.
 - `_posts/`: local posts. The original June 2025 introduction remains at `/meta/hello-world/`, labeled as an archive item.
 - `_data/authors.yml`: public profile and social links; `_config.yml` holds the primary email and canonical identity.
+- `feed.xml`: a summary-only Atom feed combining public projects, curated external essays, and substantive local posts. Site housekeeping notes and drafts are excluded; external essays link to their original publication URLs. Publication dates remain stable, and `last_modified_at` records substantive updates.
+- `assets/images/social/`: editable SVG sources and 1200 × 630 PNG exports for project link previews. Update both formats together; project front matter points to the PNG and provides its alternative text and dimensions.
 - `assets/css/main.scss`: small overrides after the original theme imports.
 
 ### Add a project

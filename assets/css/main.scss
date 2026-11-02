@@ -73,6 +73,20 @@ $quiet-border: rgba(255, 255, 255, 0.16);
   line-height: 1.7;
 }
 
+.page__content a.newsletter-subscribe {
+  background-color: $link-color;
+  color: $background-color;
+
+  &:visited {
+    color: $background-color;
+  }
+
+  &:hover {
+    background-color: $link-color-hover;
+    color: $background-color;
+  }
+}
+
 .page__content .project-subtitle {
   margin: -0.35em 0 1.7em;
   padding-left: 0.75em;

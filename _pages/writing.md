@@ -10,6 +10,8 @@ I write about economics, international affairs, artificial intelligence, climate
 
 Longer essays appear in [Limiting Factors](https://limitingfactors.substack.com), my newsletter on Substack.
 
+[Subscribe to Limiting Factors](https://limitingfactors.substack.com/subscribe){: .btn .newsletter-subscribe }
+
 {% include writing-list.html %}
 
 [Browse the newsletter archive](https://limitingfactors.substack.com/archive)
@@ -17,7 +19,7 @@ Longer essays appear in [Limiting Factors](https://limitingfactors.substack.com)
 ## Research
 
 - [Do Concert Tickets Get Cheaper Before Showtime?]({{ '/projects/seatdata/' | relative_url }}) — repeated price observations, variation between shows, and a prediction that weakened in another sample.
-- [Truthful Representation]({{ '/projects/first-amendment/' | relative_url }}) — an argument about political information, corporate spending, and the rules of representation.
+- [Truthful Representation: Campaign Finance and the First Amendment]({{ '/projects/first-amendment/' | relative_url }}) — an argument about political information, corporate spending, and the rules of representation.
 
 {% assign notes = site.posts | where_exp: "post", "post.kind != 'site-note'" %}
 {% if notes.size > 0 %}

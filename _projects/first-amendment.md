@@ -1,9 +1,15 @@
 ---
-title: "Truthful Representation"
+title: "Truthful Representation: Campaign Finance and the First Amendment"
 subtitle: "First Amendment principles, campaign finance, and capital markets"
 slug: first-amendment
 category: "Law and economics"
 date: 2026-10-27
+last_modified_at: 2026-11-02
+header:
+  og_image: /assets/images/social/first-amendment.png
+  og_image_alt: "Truthful Representation: Campaign Finance and the First Amendment. Research by Israel Fulton."
+  og_image_width: 1200
+  og_image_height: 630
 featured: true
 order: 2
 excerpt: "I examine what securities regulation can contribute to campaign finance, drawing on First Amendment theory, information economics, and a stylized election model."
