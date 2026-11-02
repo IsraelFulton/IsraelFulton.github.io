@@ -1,7 +1,7 @@
 ---
 title: "Writing"
 permalink: /writing/
-excerpt: "Selected essays from Limiting Factors, alongside research and notes on economics, institutions, and technology."
+excerpt: "Essays and research by Israel Fulton on economics, artificial intelligence, international affairs, climate, and energy, including Limiting Factors."
 ---
 
 I write about economics, international affairs, artificial intelligence, climate, and energy. A recurring question is how institutions shape the information people use to make decisions.

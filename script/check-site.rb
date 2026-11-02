@@ -22,6 +22,7 @@ pages.each do |file, doc|
   label = file.relative_path_from(root)
   errors << "#{label}: expected one h1" unless doc.css("h1").size == 1
   errors << "#{label}: missing title" if doc.at_css("title")&.text.to_s.strip.empty?
+  errors << "#{label}: duplicate title or description" unless doc.css("title").size == 1 && doc.css("meta[name='description']").size == 1
   %w[description twitter:card twitter:site].each do |name|
     errors << "#{label}: missing #{name}" if doc.at_css("meta[name='#{name}']")&.[]("content").to_s.strip.empty?
   end
@@ -31,6 +32,7 @@ pages.each do |file, doc|
   route = "/" + label.to_s.sub(/index\.html$/, "")
   expected_canonical = config.fetch("url") + route
   errors << "#{label}: wrong canonical URL" unless doc.at_css("link[rel='canonical']")&.[]("href") == expected_canonical
+  errors << "#{label}: duplicate canonical URL" unless doc.css("link[rel='canonical']").size == 1
   doc.css("script[type='application/ld+json']").each do |script|
     identity = JSON.parse(script.text)
     errors << "#{label}: missing structured-data name" if identity["name"].to_s.empty?
@@ -97,5 +99,27 @@ end
 errors << "CNAME changed" unless (root + "CNAME").read.strip == "israelfulton.com"
 errors << "Author profile is missing" unless author.fetch("name") == "Israel Fulton"
 
+# Search visibility: preserve indexability of substantive pages while keeping
+# utility/archive pages accessible without promoting them in the sitemap.
+excluded_routes = %w[/404.html /meta/hello-world/]
+sitemap = Nokogiri::XML((root + "sitemap.xml").read).remove_namespaces!
+errors << "Invalid sitemap XML" unless sitemap.errors.empty?
+sitemap_urls = sitemap.css("url > loc").map(&:text)
+errors << "Duplicate sitemap URLs" unless sitemap_urls.uniq == sitemap_urls
+pages.each do |file, doc|
+  route = "/" + file.relative_path_from(root).to_s.sub(/index\.html$/, "")
+  noindex = doc.css("meta[name='robots']").any? { |tag| tag["content"].to_s.downcase.split(/[\s,]+/).include?("noindex") }
+  errors << "#{route}: incorrect indexing rule" unless noindex == excluded_routes.include?(route)
+  in_sitemap = sitemap_urls.include?(config.fetch("url") + route)
+  errors << "#{route}: incorrect sitemap inclusion" unless in_sitemap == !excluded_routes.include?(route)
+end
+
+schemas = ->(path) { pages.fetch(root + path).css("script[type='application/ld+json']").map { |script| JSON.parse(script.text) rescue {} } }
+website = schemas.call("index.html").find { |item| item["@type"] == "WebSite" }
+errors << "Homepage needs consistent WebSite identity" unless website && website["name"] == config.fetch("title") && website["url"] == config.fetch("url") + "/"
+profile = schemas.call("about/index.html").find { |item| item["@type"] == "ProfilePage" }
+person = profile && profile["mainEntity"]
+errors << "About needs a matching ProfilePage identity" unless profile && profile["url"] == config.fetch("url") + "/about/" && person && person["@type"] == "Person" && person["name"] == author.fetch("name") && person["sameAs"] == config.fetch("social").fetch("links")
+
 abort errors.join("\n") unless errors.empty?
-puts "PASS: #{files.size} HTML pages; routes, local links/fragments, assets, metadata, contact consistency, and publishing boundaries."
+puts "PASS: #{files.size} HTML pages; routes, links/fragments, assets, unique metadata, identity schema, indexability, sitemap, contact consistency, and publishing boundaries."

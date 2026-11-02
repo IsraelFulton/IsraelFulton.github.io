@@ -4,6 +4,8 @@ date:   2025-06-21 00:00:00 -0400
 categories: [meta]
 tags:     [welcome]
 kind: site-note
+sitemap: false
+robots: "noindex, follow"
 excerpt: "The original site introduction, published June 21, 2025."
 show_date: true
 ---

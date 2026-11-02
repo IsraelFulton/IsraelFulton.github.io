@@ -1,3 +1,41 @@
 <meta name="theme-color" content="#252a34">
 <meta property="og:image:alt" content="Portrait of Israel Fulton">
 <meta name="twitter:image:alt" content="Portrait of Israel Fulton">
+
+{% if page.robots %}
+<meta name="robots" content="{{ page.robots | escape }}">
+{% endif %}
+
+{% comment %}Supplement the theme's Person markup with page-specific context.{% endcomment %}
+{% assign identity_url = '/' | absolute_url %}
+{% if page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": {{ identity_url | append: '#website' | jsonify }},
+  "name": {{ site.title | jsonify }},
+  "url": {{ identity_url | jsonify }},
+  "description": {{ site.description | strip_newlines | strip | jsonify }},
+  "inLanguage": {{ site.lang | jsonify }}
+}
+</script>
+{% elsif page.url == '/about/' %}
+{% assign profile = site.data.authors[site.author] %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": {{ 'About ' | append: site.social.name | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "mainEntity": {
+    "@type": "Person",
+    "name": {{ site.social.name | jsonify }},
+    "url": {{ identity_url | jsonify }},
+    "description": {{ page.excerpt | strip_html | strip | jsonify }},
+    "image": {{ profile.avatar | absolute_url | jsonify }},
+    "sameAs": {{ site.social.links | jsonify }}
+  }
+}
+</script>
+{% endif %}

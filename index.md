@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Economics, institutions, and technology."
-excerpt: "I'm Israel Fulton, an analyst at Analysis Group in Washington, D.C. I study how markets and institutions shape decisions."
+excerpt: "Israel Fulton is an analyst at Analysis Group in Washington, D.C. Explore his research and writing on economics, artificial intelligence, and institutions."
 author_profile: true
 classes: homepage
 ---
