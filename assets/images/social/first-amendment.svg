@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Truthful Representation: Campaign Finance and the First Amendment</title>
+  <desc id="description">Research by Israel Fulton, at israelfulton.com.</desc>
+  <rect width="1200" height="630" fill="#252a34"/>
+  <rect x="32" y="32" width="1136" height="566" rx="4" fill="none" stroke="#505865"/>
+  <path d="M72 82H128" stroke="#d8c59d" stroke-width="4"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="150" y="88" fill="#d8c59d" font-size="18" font-weight="700" letter-spacing="2.5">LAW AND ECONOMICS</text>
+    <text x="72" y="177" fill="#f1f3f5" font-size="70" font-weight="700" letter-spacing="-1.7">Truthful</text>
+    <text x="72" y="255" fill="#f1f3f5" font-size="70" font-weight="700" letter-spacing="-1.7">Representation</text>
+    <text x="74" y="350" fill="#c4ccd5" font-size="37">Campaign Finance and</text>
+    <text x="74" y="396" fill="#c4ccd5" font-size="37">the First Amendment</text>
+    <path d="M72 496H1128" stroke="#505865"/>
+    <text x="72" y="551" fill="#f1f3f5" font-size="27" font-weight="700">Israel Fulton</text>
+    <text x="1128" y="551" fill="#c4ccd5" font-size="23" text-anchor="end">israelfulton.com</text>
+  </g>
+</svg>

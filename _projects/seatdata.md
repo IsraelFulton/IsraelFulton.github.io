@@ -4,6 +4,11 @@ subtitle: "Concert resale price dynamics"
 slug: seatdata
 category: "Empirical research"
 date: 2026-10-27
+header:
+  og_image: /assets/images/social/seatdata.png
+  og_image_alt: "Do Concert Tickets Get Cheaper Before Showtime? Concert resale research by Israel Fulton."
+  og_image_width: 1200
+  og_image_height: 630
 featured: true
 order: 1
 excerpt: "I analyzed concert resale prices and inventory across 632 U.S. concerts, finding wide variation between shows and an increase-risk model that weakened on a separate sample."

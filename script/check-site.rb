@@ -4,6 +4,7 @@ require "pathname"
 require "uri"
 require "json"
 require "yaml"
+require "time"
 
 root = Pathname.new(ARGV.fetch(0, "_site")).expand_path
 abort "Build the site first: #{root} is missing" unless root.directory?
@@ -121,5 +122,42 @@ profile = schemas.call("about/index.html").find { |item| item["@type"] == "Profi
 person = profile && profile["mainEntity"]
 errors << "About needs a matching ProfilePage identity" unless profile && profile["url"] == config.fetch("url") + "/about/" && person && person["@type"] == "Person" && person["name"] == author.fetch("name") && person["sameAs"] == config.fetch("social").fetch("links")
 
+# Shared links must use the project's raster card, with matching accessible
+# metadata and actual file dimensions rather than a missing or portrait asset.
+%w[seatdata first-amendment].each do |slug|
+  doc = pages.fetch(root + "projects/#{slug}/index.html")
+  expected_image = config.fetch("url") + "/assets/images/social/#{slug}.png"
+  errors << "#{slug}: incorrect social image" unless doc.css("meta[property='og:image']").size == 1 && doc.at_css("meta[property='og:image']")["content"] == expected_image && doc.at_css("meta[name='twitter:image']")["content"] == expected_image
+  errors << "#{slug}: missing large-image card" unless doc.at_css("meta[name='twitter:card']")["content"] == "summary_large_image"
+  image_alt = doc.at_css("meta[property='og:image:alt']")["content"].to_s
+  errors << "#{slug}: incorrect card description" if image_alt.empty? || image_alt.include?("Portrait") || image_alt != doc.at_css("meta[name='twitter:image:alt']")["content"]
+  png = (root + "assets/images/social/#{slug}.png").binread
+  dimensions = png.byteslice(16, 8)&.unpack("N2")
+  errors << "#{slug}: invalid social card PNG" unless png.start_with?("\x89PNG\r\n\x1a\n".b) && dimensions == [1200, 630]
+  errors << "#{slug}: incorrect image dimensions in metadata" unless doc.at_css("meta[property='og:image:width']")["content"] == "1200" && doc.at_css("meta[property='og:image:height']")["content"] == "630"
+end
+
+# A subscriber should receive current work with stable IDs and real dates,
+# including essays at their original publication URLs.
+feed = Nokogiri::XML((root + "feed.xml").read)
+errors << "Invalid Atom XML" unless feed.errors.empty?
+ns = { "atom" => "http://www.w3.org/2005/Atom" }
+entries = feed.xpath("/atom:feed/atom:entry", ns)
+feed_links = entries.map { |entry| entry.at_xpath("atom:link[@rel='alternate']", ns)&.[]("href") }
+expected_feed_links = pages.fetch(root + "writing/index.html").css(".writing-list h3 a").map { |link| link["href"] } + pages.fetch(root + "projects/index.html").css(".project-card h3 a").map { |link| URI.join(config.fetch("url"), link["href"]).to_s }
+errors << "Feed omits selected writing or research" unless (expected_feed_links - feed_links).empty?
+errors << "Feed contains duplicate entries or housekeeping notes" unless feed_links.uniq == feed_links && !feed_links.include?(config.fetch("url") + "/meta/hello-world/")
+errors << "Feed author is inconsistent" unless feed.at_xpath("/atom:feed/atom:author/atom:name", ns)&.text == author.fetch("name")
+updates = entries.map do |entry|
+  link = entry.at_xpath("atom:link[@rel='alternate']", ns)&.[]("href")
+  errors << "Feed entry needs a stable HTTPS ID" unless link.to_s.start_with?("https://") && entry.at_xpath("atom:id", ns)&.text == link
+  errors << "Feed entry needs a summary" if entry.at_xpath("atom:summary", ns)&.text.to_s.strip.empty?
+  published = Time.iso8601(entry.at_xpath("atom:published", ns)&.text.to_s)
+  updated = Time.iso8601(entry.at_xpath("atom:updated", ns)&.text.to_s)
+  errors << "Feed entry updated before publication" if updated < published
+  updated
+end
+errors << "Feed update timestamp should follow content, not build time" unless updates.any? && Time.iso8601(feed.at_xpath("/atom:feed/atom:updated", ns)&.text.to_s) == updates.max
+
 abort errors.join("\n") unless errors.empty?
-puts "PASS: #{files.size} HTML pages; routes, links/fragments, assets, unique metadata, identity schema, indexability, sitemap, contact consistency, and publishing boundaries."
+puts "PASS: #{files.size} HTML pages; routes, links/fragments, assets, unique metadata, identity schema, indexability, sitemap, project share cards, Atom feed, contact consistency, and publishing boundaries."
