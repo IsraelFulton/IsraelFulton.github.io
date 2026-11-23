@@ -11,8 +11,8 @@ summary: "I worked with a pro bono team to help an after-school program reconcil
 
 <p>Staff at a nonprofit after-school program had difficulty matching participants across surveys—they could not determine whether the same person had previously filled one out. For instance, a participant's home address may have changed, or they entered their school's name with a typo. In a pro bono engagement, I worked with a team to help the program reconcile past surveys from more than 600 respondents.</p>
 
-<p>The program's relied on Google Workspace, so I built the process in Google Sheets and Apps Script. The data pipeline cleared direct matches automatically, flagged similar results for staff review, generated household-level matching capabilities, and created auditable, saved backups of changes.</p>
+<p>The program relied on Google Workspace, so I built the process in Google Sheets and Apps Script. The data pipeline cleared direct matches automatically, flagged similar results for staff review, generated household-level matching capabilities, and created auditable, saved backups of changes.</p>
 
 <p style="white-space: pre-wrap">While I never used Apps Script before and the start of the school year approaching, I used ChatGPT to quickly learn. Once completed, I wrote the  documentation for staff and used ChatGPT for structure and formatting support.</p>
 
-<p>At handoff, the nonprofit's staff could independently process new survey responses responses, without requiring continued consulting support.</p>
+<p>At handoff, the nonprofit's staff could independently process new survey responses, without requiring continued consulting support.</p>
