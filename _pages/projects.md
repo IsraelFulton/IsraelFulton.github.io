@@ -1,10 +1,10 @@
 ---
 title: "Projects"
 permalink: /projects/
-excerpt: "My work on concert resale markets, political information, and the institutions that shape decisions."
+excerpt: "My pro bono work with an after-school program and my research on concert ticket prices and campaign finance."
 ---
 
-An expiring concert ticket and a corporate political ad both raise questions about information and incentives. In these projects, I follow those questions through resale-market data, an election model, and the rules that shape what people know when they make decisions.
+I’m interested in how people make decisions with incomplete information. For staff at an after-school program, that meant knowing when to link two survey records and when to take a closer look. In my research, I’ve tested the advice to wait for cheaper concert tickets and asked what voters should know about the money behind a political ad.
 
 <div class="project-grid">
 {% assign projects = site.projects | sort: "order" %}
