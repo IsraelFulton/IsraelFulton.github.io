@@ -13,6 +13,6 @@ summary: "I worked with a pro bono team to help an after-school program reconcil
 
 <p>The program relied on Google Workspace, so I built the process in Google Sheets and Apps Script. The data pipeline cleared direct matches automatically, flagged similar results for staff review, generated household-level matching capabilities, and created auditable, saved backups of changes.</p>
 
-<p style="white-space: pre-wrap">While I never used Apps Script before and the start of the school year approaching, I used ChatGPT to quickly learn. Once completed, I wrote the  documentation for staff and used ChatGPT for structure and formatting support.</p>
+<p style="white-space: pre-wrap">With the start of the school year approaching, I used ChatGPT to learn Apps Script, which I’d never used before. Once completed, I wrote the documentation for staff and used ChatGPT for structure and formatting support.</p>
 
 <p>At handoff, the nonprofit's staff could independently process new survey responses, without requiring continued consulting support.</p>
