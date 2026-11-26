@@ -18,7 +18,7 @@ Longer essays appear in [Limiting Factors](https://limitingfactors.substack.com)
 
 ## Research
 
-- [Do Concert Tickets Get Cheaper Before Showtime?]({{ '/projects/seatdata/' | relative_url }}) — repeated price observations, variation between shows, and a prediction that weakened in another sample.
+- [How getting a deal on Ken Carson tickets led me to study nearly 1,000 concerts]({{ '/projects/seatdata/' | relative_url }}) — repeated price observations, variation between shows, and a prediction that weakened in another sample.
 - [Truthful Representation: Campaign Finance and the First Amendment]({{ '/projects/first-amendment/' | relative_url }}) — an argument about political information, corporate spending, and the rules of representation.
 
 {% assign notes = site.posts | where_exp: "post", "post.kind != 'site-note'" %}
