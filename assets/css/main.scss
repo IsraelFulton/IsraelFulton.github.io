@@ -28,6 +28,11 @@ $quiet-border: rgba(255, 255, 255, 0.16);
   text-wrap: balance;
 }
 
+.full-width-title .page__title {
+  max-width: none;
+  text-wrap: wrap;
+}
+
 .page__content {
   font-size: 1em;
   line-height: 1.75;

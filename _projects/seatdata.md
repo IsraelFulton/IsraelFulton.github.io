@@ -1,6 +1,7 @@
 ---
 title: "How getting a deal on Ken Carson tickets led me to study nearly 1,000 concerts"
 slug: seatdata
+classes: full-width-title
 category: "Empirical research"
 date: 2026-10-27
 last_modified_at: 2026-11-25
@@ -15,7 +16,7 @@ excerpt: "I tracked resale prices before a Ken Carson show, then used July and A
 summary: "After getting a deal on a Ken Carson ticket, I tested whether waiting paid off at other shows. In July and August, about a third of concerts got more than 10% cheaper in the final week, while more than a quarter got more than 10% more expensive."
 ---
 
-In the week before the D.C. show, I built a tool that sent me hourly price updates from several resale sites. My intuition was that people who could no longer attend would put their tickets up for resale, increasing supply and pushing prices down. But other last-minute buyers would be looking for those same bargains, so I needed to be quicker than them. Fortunately, I attended the concert at discount.
+In the week before the D.C. show, I built a tool that sent me hourly price updates from several resale sites. My intuition was that people who could no longer attend would put their tickets up for resale, increasing supply and pushing prices down. But other last-minute buyers would be looking for those same bargains, so I needed to be quicker than them. Fortunately, I attended the concert at a discount.
 
 After the concert, I wanted to see whether this pattern held across other shows. Using [SeatData](https://seatdata.io/), I pulled 208,175 historical price and inventory snapshots across 632 U.S. concerts in August 2026. I organized the observations by how far away each show was, compared each concert with its own baseline roughly two weeks earlier, and gave every concert equal weight.
 
@@ -61,6 +62,6 @@ Suppose a buyer finds a ticket one week before a show and decides to wait. Among
   <a href="{{ '/assets/images/seatdata/figure-4-benefits-and-risks-of-waiting.png' | relative_url }}"><img src="{{ '/assets/images/seatdata/figure-4-benefits-and-risks-of-waiting.png' | relative_url }}" alt="Among 536 July shows, waiting saved over 10% at 32.1% of shows, kept prices within 10% at 40.5%, and cost over 10% more at 27.4%. Among 575 August shows the shares were 33.0%, 39.1%, and 27.8%." width="2850" height="1365" loading="lazy"></a>
 </figure>
 
-My strategy worked for Ken Carson. Whether I would employ it again depends on my willingness to pay—this project and the broader economics literature align on this finding. If I’m willing to miss the show, the possibility of saving more than 10% may be worth waiting the risk of waiting. But if I’m committed to attending and found a ticket within budget, I’d rather buy it than risk paying more for the privilege of waiting.
+My strategy worked for Ken Carson. Whether I would employ it again depends on my willingness to pay—this project and the broader economics literature align on this finding. If I’m willing to miss the show, the possibility of saving more than 10% may be worth the risk of waiting. But if I’m committed to attending and found a ticket within budget, I’d rather buy it than risk paying more for the privilege of waiting.
 
 <a href="{{ '/assets/papers/ken-carson-ticket-study.pdf' | relative_url }}" download>Download the article (PDF)</a>
